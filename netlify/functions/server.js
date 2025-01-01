@@ -13,9 +13,35 @@ app.listen(port, () => {
 });
 
 exports.handler = async (event, context) => {
+    // Extract the path from the event object
+    const path = event.path.replace('/.netlify/functions/server', '');
+
+    // Route handling
+    if (path === '/getdetails') {
+        const user = {
+            id: 1,
+            name: "John Doe",
+            email: "johndoe@example.com",
+        };
+        return {
+            statusCode: 200,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(user),
+        };
+    }
+
+    if (path === '/hello') {
+        return {
+            statusCode: 200,
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: "Hello from the server!" }),
+        };
+    }
+
+    // Default response for undefined routes
     return {
-        statusCode: 200,
+        statusCode: 404,
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: 'Hello from Node.js serverless function!' }),
+        body: JSON.stringify({ error: "Route not found" }),
     };
 };
