@@ -1,4 +1,4 @@
-{
+module.exports={
     "skill": "Javascript, Salesforce Sales & Marketing cloud, Apex, Rest/SOAP API, Git, Lighting Component(LWC & Aura) , Experience Site, ReactJS, HTML, CSS, JQuery",
     "projects": [
         {

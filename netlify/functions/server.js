@@ -1,4 +1,5 @@
 const express = require('express');
+const getDetails = require('../../Apps/getDetails');
 const app = express();
 const port = 3000;
 
@@ -18,9 +19,9 @@ exports.handler = async (event, context) => {
 
     // Route handling
     if (path === '/api/v1/getdetails') {
-        const filePath = path.resolve(__dirname, '../../Data/users.json');
-        const fileData = fs.readFileSync(filePath, 'utf-8');
-        const users = JSON.parse(fileData);
+        //const filePath = path.resolve(__dirname, '../../Data/users.json');
+        //const fileData = fs.readFileSync('../../Data/users.json', 'utf-8');
+        const users = getDetails();
 
         return {
             statusCode: 200,
