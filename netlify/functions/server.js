@@ -14,10 +14,10 @@ app.listen(port, () => {
 
 exports.handler = async (event, context) => {
     // Extract the path from the event object
-    const path = event.path.replace('/.netlify/functions/server', '');
+    const path = event.path;
 
     // Route handling
-    if (path === '/getdetails') {
+    if (path === '/api/v1/getdetails') {
         const user = {
             id: 1,
             name: "John Doe",
