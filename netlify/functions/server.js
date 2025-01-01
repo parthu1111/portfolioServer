@@ -18,15 +18,14 @@ exports.handler = async (event, context) => {
 
     // Route handling
     if (path === '/api/v1/getdetails') {
-        const user = {
-            id: 1,
-            name: "John Doe",
-            email: "johndoe@example.com",
-        };
+        const filePath = path.resolve(__dirname, '../../Data/users.json');
+        const fileData = fs.readFileSync(filePath, 'utf-8');
+        const users = JSON.parse(fileData);
+
         return {
             statusCode: 200,
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(user),
+            body: JSON.stringify(users),
         };
     }
 
