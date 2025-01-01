@@ -17,6 +17,21 @@ exports.handler = async (event, context) => {
     // Extract the path from the event object
     const path = event.path;
 
+    const allowedOrigins = ['https://localhost:3000', 'https://parthparmar7878.netlify.app'];
+    
+    // Extract the origin from the event headers
+    const origin = event.headers.origin;
+
+    // Check if the origin is in the allowed list
+    const corsHeaders = {
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',  // Allow necessary HTTP methods
+        'Access-Control-Allow-Headers': 'Content-Type',         // Allow necessary headers
+    };
+
+    if (allowedOrigins.includes(origin)) {
+        corsHeaders['Access-Control-Allow-Origin'] = origin;  // Dynamically set the allowed origin
+    }
+
     // Route handling
     if (path === '/api/v1/getdetails') {
         //const filePath = path.resolve(__dirname, '../../Data/users.json');
@@ -25,7 +40,7 @@ exports.handler = async (event, context) => {
 
         return {
             statusCode: 200,
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json', ...corsHeaders },
             body: JSON.stringify(users),
         };
     }
