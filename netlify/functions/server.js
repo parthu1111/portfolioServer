@@ -1,23 +1,23 @@
 const express = require('express');
 const getDetails = require('../../Apps/getDetails');
-const app = express();
-const port = 3000;
+// const app = express();
+// const port = 3000;
 
-// Public GET API
-app.get('/api/hello', (req, res) => {
-    res.json({ message: 'Hello from Node.js server!' });
-});
+// // Public GET API
+// app.get('/api/hello', (req, res) => {
+//     res.json({ message: 'Hello from Node.js server!' });
+// });
 
-// Start server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+// // Start server
+// app.listen(port, () => {
+//     console.log(`Server is running on http://localhost:${port}`);
+// });
 
 exports.handler = async (event, context) => {
     // Extract the path from the event object
     const path = event.path;
 
-    const allowedOrigins = ['https://localhost:3000', 'https://parthparmar7878.netlify.app'];
+    const allowedOrigins = ['https://localhost:3000','https://localhost:3001', 'https://parthparmar7878.netlify.app'];
     
     // Extract the origin from the event headers
     const origin = event.headers.origin;
@@ -45,7 +45,7 @@ exports.handler = async (event, context) => {
         };
     }
 
-    if (path === '/hello') {
+    if (path === '/') {
         return {
             statusCode: 200,
             headers: { 'Content-Type': 'application/json' },
