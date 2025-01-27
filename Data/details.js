@@ -4,12 +4,13 @@ module.exports={
     "skill": "Javascript, Salesforce Sales & Marketing cloud, Apex, Rest/SOAP API, Git, Lighting Component(LWC & Aura) , Experience Site, ReactJS, HTML, CSS, JQuery",
     "projects": [
         {
-            "Title": "Project Thunder",
+            "Title": "Agreement Generation Automation",
             "Technology": "Salesforce, Salesforce LWC, Apex, JavaScript, jQuery, CSS, GitHub",
             "RoleDetail": "I had developed two apps: one is a rule engine used to define rules for specific clause sets, and the other is a clause selection tool utilized to automate order form creation. \r\n\r\nI structured the rule engine to enable users to define rules hierarchically, allowing for both parent-to-child and child-to-parent relationships. This design empowers users to create more specific rules tailored to their needs. \r\n\r\nThe clause selection engine features a picklist containing all eligible clauses, which are evaluated upon record load according to our predefined rules. \r\n\r\nAlso implemented some other features like approvals, email alerts, flows etc.",
             "Imagelinks": "https://i.postimg.cc/wM0Swr6m/img1.png,https://i.postimg.cc/rs8BCTLT/img2.png,https://i.postimg.cc/wx28x1hj/img3.png,https://i.postimg.cc/sX9FhXqK/img4.png",
             "Id": "1",
-            "Description": "<p> Specific to standard and non-standard commercial terms, there are scenarios where deal strategy acts as a blocker or causes unnecessary friction for sales to execute on an Order Form. </p> <p>The objective is to build a solution in CLM to automate the commercial terms to:</p> <ul> <li>Increase Sales autonomy by increasing deal velocity and reducing deal friction and touch points.</li> <li>Reduce operational cost around the deal cycle by reducing Order Form manual touch points.</li> <li>Standardize the pre-approved Legal and DSO commercial terms.</li> </ul>"
+            "Description": "<p> Specific to standard and non-standard commercial terms, there are scenarios where deal strategy acts as a blocker or causes unnecessary friction for sales to execute on an Order Form. </p> <p>The objective is to build a solution in CLM to automate the commercial terms to:</p> <ul> <li>Increase Sales autonomy by increasing deal velocity and reducing deal friction and touch points.</li> <li>Reduce operational cost around the deal cycle by reducing Order Form manual touch points.</li> <li>Standardize the pre-approved Legal and DSO commercial terms.</li> </ul>",
+            "Github":"https://github.com/parthu1111/Agreement-Creation-Automation"
         },
         {
             "Title": "Enhancing pricing",
@@ -33,7 +34,9 @@ module.exports={
             "RoleDetail": "i have designed a basic lighting app.",
             "Imagelinks": "https://i.postimg.cc/d3qw4Xy2/Leave-App-SS1.png,https://i.postimg.cc/63VBVwy6/Leave-App-SS2.png",
             "Id": "4",
-            "Description": "<p>The customer wanted a leave management app on Salesforce with the basic features.</p> <strong>Requirement:</strong> <ul> <li>It must be implemented in LWC.</li> <li>Want to leverage user's fields in the app.</li> <li>When the user submits the leave, approval should go to his manager.</li> <li>UI should be simple and easy to use.</li> <li>The user can revoke the leave request.</li> <li>All leave request history should be visible on the UI.</li> <li>The manager must receive a mail when a user submits a leave request.</li> <li>The app must be scalable to medium size teams.</li> </ul>"
+            "Description": "<p>The customer wanted a leave management app on Salesforce with the basic features.</p> <strong>Requirement:</strong> <ul> <li>It must be implemented in LWC.</li> <li>Want to leverage user's fields in the app.</li> <li>When the user submits the leave, approval should go to his manager.</li> <li>UI should be simple and easy to use.</li> <li>The user can revoke the leave request.</li> <li>All leave request history should be visible on the UI.</li> <li>The manager must receive a mail when a user submits a leave request.</li> <li>The app must be scalable to medium size teams.</li> </ul>",
+            
+            
         },
         {
             "Title": "Web-to-Lead Form",
@@ -41,7 +44,8 @@ module.exports={
             "RoleDetail": "Salesforce offers an out-of-the-box Web-to-Lead form; however, it lacks a file upload feature. To address this limitation, I customized the form and integrated it into a WordPress site.",
             "Imagelinks": "https://i.postimg.cc/kGMx3dR8/Screenshot-2025-01-23-at-11-11-21-AM.png",
             "Id": "5",
-            "Description": "<p>The user required a <strong>Web-to-Lead form</strong> with <em>file upload functionality</em>, where the uploaded file would be saved as a <strong>note and attachment</strong> on the associated lead record.</p>"
+            "Description": "<p>The user required a <strong>Web-to-Lead form</strong> with <em>file upload functionality</em>, where the uploaded file would be saved as a <strong>note and attachment</strong> on the associated lead record.</p>",
+            "Github":"https://github.com/parthu1111/webToLeadFormWithFileUpload"
         }
     ],
     "Id": "a01dM00000KReKSQA1",
