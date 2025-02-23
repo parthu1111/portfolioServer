@@ -16,8 +16,13 @@ const getDetails = require('../../Apps/getDetails');
 exports.handler = async (event, context) => {
     // Extract the path from the event object
     const path = event.path;
+    const method=event.httpMethod;
+    console.log("Method: ",method);
+    console.log("Path: ",path);
+    
+    
 
-    const allowedOrigins = ['https://localhost:3000','https://localhost:3001', 'https://parthparmar7878.netlify.app'];
+    const allowedOrigins = ['https://localhost:3000','https://localhost:3001', 'https://parthparmar7878.netlify.app','https://imparthparmar.netlify.app'];
     
     // Extract the origin from the event headers
     const origin = event.headers.origin;
@@ -45,10 +50,21 @@ exports.handler = async (event, context) => {
         };
     }
 
+    if(path == '/api/v1/sendemail'){
+        //const data = JSON.parse(event.body);
+        let data=JSON.parse(event.body);
+        console.log(data);
+        return {
+            statusCode: 200,
+            headers: { 'Content-Type': 'application/json', ...corsHeaders },
+            body: JSON.stringify(data)
+        };
+    }
+
     if (path === '/') {
         return {
             statusCode: 200,
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 'Content-Type': 'application/json',...corsHeaders },
             body: JSON.stringify({ message: "Hello from the server!" }),
         };
     }
@@ -56,7 +72,7 @@ exports.handler = async (event, context) => {
     // Default response for undefined routes
     return {
         statusCode: 404,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', ...corsHeaders },
         body: JSON.stringify({ error: "Route not found" }),
     };
 };
