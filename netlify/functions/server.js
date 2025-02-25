@@ -1,5 +1,5 @@
 const express = require('express');
-const getDetails = require('../../Apps/getDetails');
+const {getDetails,getDetailsByPublicService} = require('../../Apps/getDetails');
 // const app = express();
 // const port = 3000;
 
@@ -42,6 +42,17 @@ exports.handler = async (event, context) => {
         //const filePath = path.resolve(__dirname, '../../Data/users.json');
         //const fileData = fs.readFileSync('../../Data/users.json', 'utf-8');
         const users = getDetails();
+
+        return {
+            statusCode: 200,
+            headers: { 'Content-Type': 'application/json', ...corsHeaders },
+            body: JSON.stringify(users),
+        };
+    }
+    if (path === '/api/v2/getdetails') {
+        //const filePath = path.resolve(__dirname, '../../Data/users.json');
+        //const fileData = fs.readFileSync('../../Data/users.json', 'utf-8');
+        const users = getDetailsByPublicService();
 
         return {
             statusCode: 200,
