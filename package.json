@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "express": "^4.21.2",
-    "netlify-cli": "^17.38.1"
+    "netlify-cli": "^17.38.1",
+    "nodemailer": "^6.10.0"
   }
 }

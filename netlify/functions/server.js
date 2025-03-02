@@ -1,4 +1,4 @@
-const express = require('express');
+const nodemailer = require('nodemailer');
 const {getDetails,getDetailsByPublicService} = require('../../Apps/getDetails');
 // const app = express();
 // const port = 3000;
@@ -63,12 +63,35 @@ exports.handler = async (event, context) => {
 
     if(path == '/api/v1/sendemail'){
         //const data = JSON.parse(event.body);
-        let data=JSON.parse(event.body);
+        console.log(event.body);
+        let reqData=JSON.parse(event.body);
+        let data='{"message":"Email sent successfully"}';
+        //let data=JSON.parse(event.body);
+        const { LastName, Email, Description } = JSON.parse(event.body);
+         // Create transporter using SMTP (Use Gmail, SendGrid, etc.)
+         let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: 'parthparmar9786@gmail.com', // Your email (store in environment variable)
+                pass: 'hmlz zzxb cxnx cosp'  // App password (not your real password)
+            }
+        });
+
+        // Email Options
+        let mailOptions = {
+            from: 'Pr@vin7878*',
+            to: Email, // Send to the user's email
+            subject: `Hello ${LastName}, Your Request Received!`,
+            text: `Thank you for reaching out! Your message: "${Description}" has been received.`
+        };
+
+        await transporter.sendMail(mailOptions);
+
         console.log(data);
         return {
             statusCode: 200,
             headers: { 'Content-Type': 'application/json', ...corsHeaders },
-            body: JSON.stringify(data)
+            body: JSON.stringify({ message: "Email sent successfully!" })
         };
     }
 

@@ -53,5 +53,6 @@ module.exports={
         }
     ],
     "Id": "a01dM00000KReKSQA1",
-    "About": "Total 4+ years of experience in IT industry and 3.5+ years of experience as salesforce developer/administrator/configuration and experience cloud. Skilled in designing custom solutions, implementing automation, and enhancing user experiences on the Salesforce platform. Proficient in Apex, JavaScript and ReactJS, with strong problem-solving skills and a solid understanding of object-oriented programming principles. Well-versed in data structures and algorithms, enabling efficient and optimized solution design."
+    "About": "Total 4+ years of experience in IT industry and 3.5+ years of experience as salesforce developer/administrator/configuration and experience cloud. Skilled in designing custom solutions, implementing automation, and enhancing user experiences on the Salesforce platform. Proficient in Apex, JavaScript and ReactJS, with strong problem-solving skills and a solid understanding of object-oriented programming principles. Well-versed in data structures and algorithms, enabling efficient and optimized solution design.",
+    "resume":"https://drive.google.com/file/d/1TF_247YR-R3w_G4k4LwEMvRK5aiAQDe2/view?usp=sharing"
 }
